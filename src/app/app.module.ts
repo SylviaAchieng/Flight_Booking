@@ -3,16 +3,43 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './pages/admin/login/login.component';
+import { LayoutComponent } from './pages/admin/layout/layout.component';
+import { NewFlightComponent } from './pages/admin/new-flight/new-flight.component';
+import { AllFlightsComponent } from './pages/admin/all-flights/all-flights.component';
+import { CityComponent } from './pages/admin/city/city.component';
+import { BookingsComponent } from './pages/admin/bookings/bookings.component';
+import { AirportComponent } from './pages/admin/airport/airport.component';
+import { SearchComponent } from './pages/website/search/search.component';
+import { BookFlightComponent } from './pages/website/book-flight/book-flight.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { MyBookingsComponent } from './pages/website/my-bookings/my-bookings.component';
+import { MasterService } from './core/service/master.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    LayoutComponent,
+    NewFlightComponent,
+    AllFlightsComponent,
+    CityComponent,
+    BookingsComponent,
+    AirportComponent,
+    SearchComponent,
+    BookFlightComponent,
+    MyBookingsComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [MasterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

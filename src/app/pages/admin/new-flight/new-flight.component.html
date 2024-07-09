@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h4>New Flight Form</h4>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-2">
+            <label for="">Flight No</label>
+            <input type="text" class="form-control" placeholder="Enter Flight No">
+        </div>
+    </div>
+    <div class="row pt-3">
+        <div class="col-3">
+            <label for="">Schedule Date</label>
+            <input type="date" class="form-control" placeholder="Select Travel Date">
+        </div>
+        <div class="col-3">
+            <label for="">Departure Time</label>
+            <input type="text" class="form-control" placeholder="Enter Departure Time">
+        </div>
+        <div class="col-3">
+            <label for="">Arrival Time</label>
+            <input type="text" class="form-control" placeholder="Enter Arrival Time">
+        </div>
+    </div>
+    <div class="row pt-3">
+        <div class="col-4">
+            <label for="">Select Departure Airport</label>
+            <select class="form-select">
+                <option value="">Select Airport</option>
+                <option *ngFor="let item of airportList" [value]="item.airportId">{{item.airportName}}, {{item.cityName}}</option>
+            </select>
+        </div>
+        <div class="col-4">
+            <label for="">Select Arrival Airport</label>
+            <select class="form-select">
+                <option value="">Select Airport</option>
+                <option *ngFor="let item of airportList" [value]="item.airportId">{{item.airportName}}, {{item.cityName}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row pt-3">
+    <div class="col-3">
+        <label for="">Total Seats</label>
+        <input type="text" class="form-control" placeholder="Enter Total Seats">
+    </div>
+    <div class="col-3">
+        <label for="">Ticket Price</label>
+        <input type="text" class="form-control" placeholder="Enter Price">
+    </div>
+</div>
+<div class="row pt-5">
+    <div class="col-3 text-center">
+        <button class="btn btn-secondary">Reset</button>
+    </div>
+    <div class="col-3 text-center">
+        <button class="btn btn-success">Create Flight</button>
+    </div>
+</div>
+</div>

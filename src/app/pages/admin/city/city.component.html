@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-12 text-end pt-2 pb-2">
+        <button class="btn btn-success pd-2" (click)="addNew()">Add New</button>
+        <button class="btn btn-success ms-2" (click)="bulkUpdateCity()">Bulk Update</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Sr No</th>
+                    <th>City Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let city of cityList; let sr= index">
+                    <td>
+                        {{sr+1}}
+                    </td>
+                    <td>
+                        <input type="text" [(ngModel)]="city.cityName"
+                            placeholder="Enter City Name" /><!--data binding-->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
