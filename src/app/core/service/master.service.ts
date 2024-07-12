@@ -6,6 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class MasterService {
 
+  private apiUrl = '/api/FlightBooking/GetAllFlights'
+
   constructor(private http: HttpClient) { }
 
   getAllAirport() {
@@ -20,8 +22,12 @@ export class MasterService {
     return this.http.get(`/api/FlightBooking/GetAllCity`);
   }
 
-  getAllFlights() {
-    return this.http.get(`/api/FlightBooking/GetAllFlights`);
+  // getAllFlights() {
+  //   return this.http.get(`/api/FlightBooking/GetAllFlights`);
+  // }
+
+  getAllFlights():Promise<any> {
+    return this.http.get(this.apiUrl).toPromise();
   }
 
   createFlight(flights: any) {
@@ -33,12 +39,13 @@ export class MasterService {
   }
 
   register(flights: any) {
-    return this.http.post("https://freeapi.gerasim.in/api/FlightBooking/register",flights );
+    return this.http.post("/api/FlightBooking/register",flights );
   }
   login(flights: any) {
-    return this.http.post("https://freeapi.gerasim.in/api/FlightBooking/login",flights );
+    return this.http.post("/api/FlightBooking/login",flights );
   }
   bookTicket(flights: any) {
-    return this.http.post("https://freeapi.gerasim.in/api/FlightBooking/bookticket",flights );
+    return this.http.post("/api/FlightBooking/bookticket",flights );
   }
+  
 }

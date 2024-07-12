@@ -10,20 +10,28 @@ import { AllFlightsComponent } from './pages/admin/all-flights/all-flights.compo
 import { CityComponent } from './pages/admin/city/city.component';
 import { NewFlightComponent } from './pages/admin/new-flight/new-flight.component';
 import { LoginComponent } from './pages/admin/login/login.component';
+import { WebsiteLandingComponent } from './pages/website/website-landing/website-landing.component';
 
 const routes: Routes = [
   {
     path:'', redirectTo:'search', pathMatch:'full'
   },
   {
-    path:'search', component: SearchComponent, title:'Search Flight'
+    path:'', component: WebsiteLandingComponent,
+    children:[
+      {
+        path:'search', component: SearchComponent, title:'Search Flight'
+      },
+      {
+        path:'book-flight', component:BookFlightComponent, title:'Book New Ticket'
+      },
+      {
+        path:'bookings', component:MyBookingsComponent, title:'My Bookings'
+      }
+
+    ]
   },
-  {
-    path:'book-flight', component:BookFlightComponent, title:'Book New Ticket'
-  },
-  {
-    path:'bookings', component:MyBookingsComponent, title:'My Bookings'
-  },
+  
   {
     path:'login', component:LoginComponent
   },

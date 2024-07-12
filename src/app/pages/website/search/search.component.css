@@ -3,11 +3,6 @@ p {
     margin-bottom: 0 !important;
 }
 
-
-
-
-
-
 .fontSizeWeight {
     font-size: 13px;
     font-weight: 200;
@@ -56,24 +51,24 @@ form {
         }
     }
 
-    input[type=button] { 
+    input[type=button] {
         color: #fff;
         font-size: 15px;
         padding: 8px;
         width: 100%;
     }
 
-   select { 
-       color: gray;
-       font-size: 15px;
-       padding: 8px;
-       margin-top: 5px;
-       width: 100%;
-   }
+    select {
+        color: gray;
+        font-size: 15px;
+        padding: 8px;
+        margin-top: 5px;
+        width: 100%;
+    }
 
 }
 
- 
+
 main {
     max-width: 1440px;
     margin: 0 auto;
@@ -247,7 +242,7 @@ header {
 
             th {
                 color: #555;
-                padding-left: 9px; 
+                padding-left: 9px;
 
                 i {
                     cursor: pointer;
@@ -389,4 +384,12 @@ form input[type=button] {
 .logo {
     width: 32px;
     height: 32px;
+}
+
+select{
+    color: gray;
+    font-size: 15px;
+    padding: 8px;
+    margin-top: 5px;
+    width: 100%;
 }

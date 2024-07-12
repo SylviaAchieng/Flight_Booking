@@ -1,0 +1,9 @@
+header {
+    background: #fff;
+    text-align: center;
+
+    .planIc {
+        color: #000;
+        font-size: 40px;
+    }
+}

@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MyBookingsComponent } from './pages/website/my-bookings/my-bookings.component';
 import { MasterService } from './core/service/master.service';
+import { WebsiteLandingComponent } from './pages/website/website-landing/website-landing.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { MasterService } from './core/service/master.service';
     SearchComponent,
     BookFlightComponent,
     MyBookingsComponent,
+    WebsiteLandingComponent,
     
   ],
   imports: [
