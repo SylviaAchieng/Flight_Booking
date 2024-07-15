@@ -23,7 +23,7 @@
                             </select>
                         </div>
                         <div id="depatureDate">
-                            <input type="text" name="travelDate" [(ngModel)]="travelDate" placeholder="Travel Date" onfocus="(this.type='date')" id="travelDate"
+                            <input type="text" name="travelDate" [(ngModel)]="travelDate" placeholder="Travel Date"  id="travelDate"
                                  />
                         </div>
                         <div id="returnDate">
@@ -53,7 +53,7 @@
                         <div class="row">
                             <div class="col-5">
                                 <div class="headerStartingDate">
-                                    <h4 class="headStartLoc">Chennai (MAA)</h4>
+                                    <h4 class="headStartLoc">Kenya (AIRWAYS)</h4>
                                     <p class="headStartDate">2024-03-06</p>
                                 </div>
                             </div>
@@ -108,7 +108,7 @@
                         <div class="col-3"> {{flight.price}}
                         </div>
                         <div class="col-2">
-                            <input type="button" class="bookTicBtn" value="Book Now">
+                            <input type="button" class="bookTicBtn" (click)="bookTicket(flight.flightId)" value="Book Now">
                         </div>
                     </div>
                 </div>
@@ -118,3 +118,67 @@
             </div>
             <!-- Flight List From Ends -->
         </section>
+
+        <div class="modal" id="bookModel">
+            <div class="modal-dialog">
+              <div class="modal-content">
+          
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Modal Heading</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+          
+                <!-- Modal body -->
+                <div class="modal-body">
+                  <div class="row">
+                    <div class="col-3">
+                        <label for="">Name</label>
+                        <input type="text" [(ngModel)]="passengerObj.travelerName" class="form-control">
+                    </div>
+                    <div class="col-3">
+                        <label for="">Contact No</label>
+                        <input type="text" [(ngModel)]="passengerObj.contactNo" class="form-control">
+                    </div>
+                    <div class="col-3">
+                        <label for="">Card</label>
+                        <input type="text" [(ngModel)]="passengerObj.aadharNo" class="form-control">
+                    </div>
+                    <div class="col-3">
+                        <button type="button" class="btn btn-primary" (click)="addPassenger()">Add</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Sr No</th>
+                                    <th>Name</th>
+                                    <th>Contact No</th>
+                                    <th>Card No</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of passengerList; let sr= index">
+                                    <td>{{sr+1}}</td>
+                                    <td>{{item.travelerName}}</td>
+                                    <td>{{item.contactNo}}</td>
+                                    <td>{{item.aadharNo}}</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                  </div>
+                </div>
+          
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-success" (click)="onBookTicket()">Book Ticket</button>
+                </div>
+          
+              </div>
+            </div>
+          </div>
