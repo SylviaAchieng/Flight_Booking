@@ -4,7 +4,7 @@
         <div class="container">
             <a class="navbar-brand fs-4 fw-bold " href="#"><i class="fa fa-cart-shopping fs-4"
                     style="color: #f54242;"></i><span class="text-white">
-                    Railway
+                    AIRWAYS
                 </span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -81,7 +81,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" (click)="closeRegister()">Close</button>
                 <button type="button" class="btn btn-success" (click)="onSave()">Register</button>
             </div>
 
@@ -114,7 +114,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger"  data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger"  (click)="closeLogin()">Close</button>
                 <button type="button" class="btn btn-success" (click)="onLogin()">Login</button>
             </div>
 
